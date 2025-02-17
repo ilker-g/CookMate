@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "tailwindcss";
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    background-color: #fdf2e9;
+  
+  }
+
+}
+
+.slick-slide > div{
+  margin: 0 10px;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: stretch; /* Her bir öğe tüm yüksekliği kapsayacak şekilde yayılacak */
+}
+
+.slider-item {
+  display: flex;
+  justify-content: stretch; /* Her öğe eşit yüksekliği alacak */
+}
+
+.slick-prev, .slick-next {
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+}
+
+h1,
+h3,
+h4{
+  background: linear-gradient(to right, rgb(251, 146, 60), rgb(251, 113, 133));
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
