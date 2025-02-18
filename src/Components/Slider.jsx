@@ -22,7 +22,16 @@ function Slide() {
   const goToRecipe = (hash) => {
     navigate("/recipes");
     setTimeout(() => {
+      console.log('branch test commit');
       window.location.hash = hash;
+      console.log('branch test commit 2');
+      console.log('branch test commit 3');
+      console.log('branch test commit');
+      console.log('branch test commit');
+      console.log('branch test commit');
+      console.log('branch test commit');
+      console.log('branch test commit');
+      console.log('branch test commit');
     }, 100);
   };
 
