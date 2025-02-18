@@ -4,6 +4,7 @@ import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Howitworks from "./Components/Howitworks";
 import Slider from "./Components/Slider";
+import Meals from "./Components/Meals";
 import Ingredients from "./Components/Ingredients"
 
 function HomePage() {
@@ -21,6 +22,8 @@ function HomePage() {
       <Howitworks />
       
       <Ingredients/>
+
+      <Meals />
 
     </div>
     </div>
