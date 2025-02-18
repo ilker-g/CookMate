@@ -9,6 +9,7 @@ const navigate=useNavigate();
   
   const handleSelection = (item) => {
     setSelectedItems((prevSelectedItems) => {
+      console.log('test branch');
       if (prevSelectedItems.includes(item)) {
         return prevSelectedItems.filter((i) => i !== item);
       } else {
