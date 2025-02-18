@@ -1,0 +1,25 @@
+.kaydirma{
+    padding: 5px;
+            background-color: rgb(143, 226, 143);
+            width: 300px;
+            height: 110px;
+            overflow-x: hidden;
+            overflow-y: auto;
+}
+.custom-scroll::-webkit-scrollbar {
+    width:5px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #ffc19b; /* Arkaplan rengi */
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background:#ff914e ; /* Kaydırma çubuğunun rengi */
+    border-radius: 4px;
+  }
+  .selected {
+    background-color: #ffaf80 !important;  /* Daha soluk bir turuncu tonu */
+    opacity: 0.6;  /* Hafif şeffaflık */
+    transition: background-color 0.3s, opacity 0.3s;
+}
