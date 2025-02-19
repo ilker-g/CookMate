@@ -21,6 +21,7 @@ function HomePage() {
         <Howitworks />
 
         <Meals />
+
       </div>
     </div>
   );
