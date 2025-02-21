@@ -10,13 +10,13 @@ function Login() {
             <img
               className="w-[10rem] mx-auto mb-5 hover:cursor-pointer"
               src="/public/images/cookmate.png"
-              onClick={() => window.location = '/'}
+              onClick={() => (window.location = "/")}
             />
           </header>
           <form>
             <div>
               <label className=" block mb-2 text-[#333] text-lg" for="username">
-                Username
+                Kullanıcı Adı
               </label>
               <input
                 className="w-full p-2 mb-6 text-[#333] border-b-2 border-[#ff914e] outline-none focus:bg-gray-300"
@@ -26,7 +26,7 @@ function Login() {
             </div>
             <div>
               <label className="block mb-2 text-[#333] text-lg" for="password">
-                Password
+                Şifre
               </label>
               <input
                 className="w-full p-2 mb-6 text-[#333] border-b-2 border-[#ff914e] outline-none focus:bg-gray-300"
@@ -46,13 +46,13 @@ function Login() {
               className="text-[#ff914e] hover:underline text-md float-left"
               href="#"
             >
-              Forgot Password?
+              Şifremi Unuttum?
             </a>
             <a
               className="text-[#ff914e] hover:underline  text-md float-right"
               href="#"
             >
-              Create Account
+              Hesap Oluştur
             </a>
           </footer>
         </div>

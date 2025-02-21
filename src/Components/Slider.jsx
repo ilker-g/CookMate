@@ -55,7 +55,7 @@ function Slide() {
 
   return (
     <>
-      <div className="w-full my-30">
+      <div className="w-full my-30 ">
         <div>
           <h3 className="text-2xl ml-5 my-5 lg:text-3xl font-bold lg:ml-20 lg:my-20">
             Çok Sevilen Tarifleri Dene
