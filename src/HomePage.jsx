@@ -4,7 +4,6 @@ import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Howitworks from "./Components/Howitworks";
 import Slider from "./Components/Slider";
-import Ingredients from "./Components/Ingredients"
 import Meals from "./Components/Meals";
 
 function HomePage() {
@@ -19,9 +18,7 @@ function HomePage() {
 
         <About />
 
-      <Howitworks />
-      
-      <Ingredients/>
+        <Howitworks />
 
         <Meals />
       </div>
