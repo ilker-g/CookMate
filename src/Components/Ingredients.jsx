@@ -49,79 +49,80 @@ function Ingredients() {
   };
 
   return (
-    <div>
-      <div className="bg-[#333] text-nowrap flex items-center gap-5 p-6 lg:justify-center mb-10">
-        <img
-          src="/images/cookmate.png"
-          alt="logo"
-          className="w-[10rem] lg:w-[6rem] md:w-xs lg:mx-10 lg:w-xs hover:cursor-pointer"
-          onClick={() => {
-            window.location = "/";
-          }}
-        />
-      </div>
+    <>
+      <div>
+        <div className="bg-[#333] text-nowrap flex items-center gap-5 p-6 lg:justify-center mb-10">
+          <img
+            src="/images/cookmate.png"
+            alt="logo"
+            className="w-[10rem] lg:w-[6rem] md:w-xs lg:mx-10 lg:w-xs hover:cursor-pointer"
+            onClick={() => {
+              window.location = "/";
+            }}
+          />
+        </div>
 
-      <div className="pt-10 mx-10">
-        <h2 className="text-center text-2xl lg:text-3xl pb-20 ">
-          Dilediğiniz kadar tür seçin ve seçtiğiniz türler ile ilgili tarifleri
-          görmek için aşağıdan malzeme seçip tarifleri göster butonuna
-          tıklayınız.
-        </h2>
+        <div className="pt-10 mx-10">
+          <h2 className="text-center text-2xl lg:text-3xl pb-20 ">
+            Dilediğiniz kadar tür seçin ve seçtiğiniz türler ile ilgili
+            tarifleri görmek için aşağıdan malzeme seçip tarifleri göster
+            butonuna tıklayınız.
+          </h2>
 
-        <div className="grid grid-cols-4 justify-center gap-5 lg:flex lg:gap-25 ">
-          {data.map((d) => (
-            <div
-              className={`hover:cursor-pointer lg:space-y-2 transform hover:scale-110 transition ease-in-out 
+          <div className="grid grid-cols-4 justify-center gap-5 lg:flex lg:gap-25 ">
+            {data.map((d) => (
+              <div
+                className={`hover:cursor-pointer lg:space-y-2 transform hover:scale-110 transition ease-in-out 
                 ${
                   selectedItems.includes(d) ? "opacity-50" : ""
                 } // If the item is selected, apply the opacity class
                 `}
-              onClick={() => handleSelection(d)}
-            >
-              <div>
-                <img
-                  src={d.img}
-                  alt="yemek görseli"
-                  className=" w-[5rem] h-auto rounded-xl "
-                />
-                <p>{d.name} </p>
+                onClick={() => handleSelection(d)}
+              >
+                <div>
+                  <img
+                    src={d.img}
+                    alt="yemek görseli"
+                    className=" w-[5rem] h-auto rounded-xl "
+                  />
+                  <p>{d.name} </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col p-5 items-center">
-        <div className="my-10">
-          <input
-            type="text"
-            value={yeniMalzeme}
-            onChange={(e) => setYeniMalzeme(e.target.value)}
-            placeholder="Malzeme ekle.."
-            className="lg:w-[450px]  h-10 p-3 border border-gray-300 rounded-lg"
-          />
-          <button
-            onClick={yeniMalzemeEkle}
-            className=" ml-5 bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
-          >
-            Ekle
-          </button>
+            ))}
+          </div>
         </div>
 
-        {/* Kategorileri göster */}
-        <div className="grid lg:grid-cols-3 gap-10 text-center ">
-          {kategoriler.map((kategori, index) => (
-            <div
-              key={index}
-              className="custom-scroll bg-[#ffc19b] p-4 rounded-lg shadow-md h-50 overflow-y-auto"
+        <div className="flex flex-col p-5 items-center">
+          <div className="my-10">
+            <input
+              type="text"
+              value={yeniMalzeme}
+              onChange={(e) => setYeniMalzeme(e.target.value)}
+              placeholder="Malzeme ekle.."
+              className="lg:w-[450px]  h-10 p-3 border border-gray-300 rounded-lg"
+            />
+            <button
+              onClick={yeniMalzemeEkle}
+              className=" ml-5 bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
             >
-              <h3 className="text-lg font-bold mb-3">{kategori.kategori}</h3>
-              <div className="flex flex-wrap gap-2">
-                {kategori.malzemeler.map((malzeme) => (
-                  <button
-                    key={malzeme}
-                    onClick={() => malzemeEkle(malzeme)}
-                    className={`bg-[#ff904d] text-white px-3 py-1 rounded-lg hover:bg-[#ff6c12] 
+              Ekle
+            </button>
+          </div>
+
+          {/* Kategorileri göster */}
+          <div className="grid lg:grid-cols-3 gap-10 text-center ">
+            {kategoriler.map((kategori, index) => (
+              <div
+                key={index}
+                className="custom-scroll bg-[#ffc19b] p-4 rounded-lg shadow-md h-50 overflow-y-auto"
+              >
+                <h3 className="text-lg font-bold mb-3">{kategori.kategori}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {kategori.malzemeler.map((malzeme) => (
+                    <button
+                      key={malzeme}
+                      onClick={() => malzemeEkle(malzeme)}
+                      className={`bg-[#ff904d] text-white px-3 py-1 rounded-lg hover:bg-[#ff6c12] 
                                             ${
                                               secilenMalzemeler.includes(
                                                 malzeme
@@ -129,64 +130,76 @@ function Ingredients() {
                                                 ? "selected"
                                                 : ""
                                             }`}
+                    >
+                      {malzeme}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Seçilen malzemeleri göster */}
+          <div className="bg-orange-200 mt-10 p-4  rounded-lg shadow-md flex justify-between items-center lg:w-[1000px] w-screen  flex-col">
+            <h3 className="text-lg font-semibold mb-2 ">Seçilen Malzemeler:</h3>
+
+            <div>
+              <div className="flex flex-wrap gap-4">
+                {secilenMalzemeler.map((malzeme, index) => (
+                  // <span
+                  //   key={`${malzeme}-${index}`}
+                  //   className="bg-orange-500 text-white px-3 py-1 rounded-lg cursor-pointer hover:bg-orange-700 transition"
+                  //   onClick={() => malzemeKaldir(malzeme)} // tıklanınca silme işi
+                  // >
+                  //   {malzeme}
+                  // </span>
+
+                  <div
+                    key={malzeme}
+                    class="relative rounded-md flex bg-[#ff904d] hover:bg-[#ff6c12] py-1 pl-2.5 pr-10 border border-transparent text-sm text-white transition-all shadow-sm"
                   >
                     {malzeme}
-                  </button>
+                    <button
+                      class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5 hover:cursor-pointer"
+                      type="button"
+                      key={index}
+                      onClick={() => closeAlert(malzeme)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        class="w-4 h-4"
+                      >
+                        <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                      </svg>
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Seçilen malzemeleri göster */}
-        <div className="mt-10 p-4 bg-orange-200 rounded-lg shadow-md flex justify-between items-center lg:w-[1000px] w-screen  flex-col">
-          <div>
-            <h3 className="text-lg font-semibold mb-2">Seçilen Malzemeler:</h3>
-            <div className="flex flex-wrap gap-4">
-              {secilenMalzemeler.map((malzeme, index) => (
-                // <span
-                //   key={`${malzeme}-${index}`}
-                //   className="bg-orange-500 text-white px-3 py-1 rounded-lg cursor-pointer hover:bg-orange-700 transition"
-                //   onClick={() => malzemeKaldir(malzeme)} // tıklanınca silme işi
-                // >
-                //   {malzeme}
-                // </span>
-
-                <div
-                  key={malzeme}
-                  class="relative rounded-md flex bg-[#ff904d] hover:bg-[#ff6c12] py-1 pl-2.5 pr-10 border border-transparent text-sm text-white transition-all shadow-sm"
-                >
-                  {malzeme}
-                  <button
-                    class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5 hover:cursor-pointer"
-                    type="button"
-                    key={index}
-                    onClick={() => closeAlert(malzeme)}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      class="w-4 h-4"
-                    >
-                      <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
-            </div>
+            {/* Tarifleri Göster Butonu */}
+            <button
+              className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition duration-150 ease-in-out mt-10"
+              onClick={() => document.querySelector("#prompt").classList.remove("hidden") }
+            >
+              Tarifleri Göster
+            </button>
           </div>
-
-          {/* Tarifleri Göster Butonu */}
-          <button
-            className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition duration-150 ease-in-out mt-10"
-            onClick={() => console.log("Tarifleri Göster butonuna tıklandı")}
-          >
-            Tarifleri Göster
-          </button>
         </div>
       </div>
-    </div>
+
+      <div id="prompt" className="hidden">
+        <p>
+          {`Bana yalnızca geçerli bir JSON formatında veri ver. JSON dışında herhangi bir metin ekleme. JSON,${selectedItems.map((item) => item.name).join(", ")} türünde, ${secilenMalzemeler.join(", ")} malzemelerini içeren tariflerden oluşmalı. Her tarif için şu bilgileri ekle:
+          name: Tarifin adı (string)
+          ingredients: Kullanılan malzemeler ve kullanım miktarları (array)
+          instructions: Adım adım yapılış bilgisi (array)
+          Cevabını yalnızca JSON formatında ver, başka hiçbir açıklama ekleme.`}
+        </p>
+      </div>
+    </>
   );
 }
 
