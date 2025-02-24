@@ -43,9 +43,9 @@ function Ingredients() {
   };
 
   const closeAlert = (malzeme) => {
-    const chipElement = document.getElementById("chip");
-    chipElement.style.display = "none"; // Hide the chip
-    setSecilenMalzemeler(secilenMalzemeler.filter((item) => item !== malzeme));
+    setSecilenMalzemeler((prevMalzemeler) =>
+      prevMalzemeler.filter((item) => item !== malzeme)
+    );
   };
 
   return (
@@ -153,7 +153,7 @@ function Ingredients() {
                 // </span>
 
                 <div
-                  id="chip"
+                  key={malzeme}
                   class="relative rounded-md flex bg-[#ff904d] hover:bg-[#ff6c12] py-1 pl-2.5 pr-10 border border-transparent text-sm text-white transition-all shadow-sm"
                 >
                   {malzeme}
