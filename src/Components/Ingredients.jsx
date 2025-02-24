@@ -18,8 +18,8 @@ function Ingredients() {
   const [secilenMalzemeler, setSecilenMalzemeler] = useState([]);
   const [yeniMalzeme, setYeniMalzeme] = useState("");
 
-  // Butona tıklanınca malzemeyi ekleyen/çıkaran fonksiyon
-  const malzemeEkleCikar = (malzeme) => {
+  // Butona tıklanınca malzemeyi ekleyen fonksiyon
+  const malzemeEkle = (malzeme) => {
     if (secilenMalzemeler.includes(malzeme)) {
       setSecilenMalzemeler(
         secilenMalzemeler.filter((item) => item !== malzeme)
@@ -29,10 +29,10 @@ function Ingredients() {
     }
   };
 
-  // Seçilen malzemeyi kaldıran fonksiyon
-  const malzemeKaldir = (malzeme) => {
-    setSecilenMalzemeler(secilenMalzemeler.filter((item) => item !== malzeme));
-  };
+  // // Seçilen malzemeyi kaldıran fonksiyon
+  // const malzemeKaldir = (malzeme) => {
+  //   setSecilenMalzemeler(secilenMalzemeler.filter((item) => item !== malzeme));
+  // };
 
   // yeni malzeme ekleme
   const yeniMalzemeEkle = () => {
@@ -40,6 +40,12 @@ function Ingredients() {
       setSecilenMalzemeler([...secilenMalzemeler, yeniMalzeme]);
       setYeniMalzeme("");
     }
+  };
+
+  const closeAlert = (malzeme) => {
+    const chipElement = document.getElementById("chip");
+    chipElement.style.display = "none"; // Hide the chip
+    setSecilenMalzemeler(secilenMalzemeler.filter((item) => item !== malzeme));
   };
 
   return (
@@ -114,7 +120,7 @@ function Ingredients() {
                 {kategori.malzemeler.map((malzeme) => (
                   <button
                     key={malzeme}
-                    onClick={() => malzemeEkleCikar(malzeme)}
+                    onClick={() => malzemeEkle(malzeme)}
                     className={`bg-[#ff904d] text-white px-3 py-1 rounded-lg hover:bg-[#ff6c12] 
                                             ${
                                               secilenMalzemeler.includes(
@@ -138,13 +144,35 @@ function Ingredients() {
             <h3 className="text-lg font-semibold mb-2">Seçilen Malzemeler:</h3>
             <div className="flex flex-wrap gap-4">
               {secilenMalzemeler.map((malzeme, index) => (
-                <span
-                  key={`${malzeme}-${index}`}
-                  className="bg-orange-500 text-white px-3 py-1 rounded-lg cursor-pointer hover:bg-orange-700 transition"
-                  onClick={() => malzemeKaldir(malzeme)} // tıklanınca silme işi
+                // <span
+                //   key={`${malzeme}-${index}`}
+                //   className="bg-orange-500 text-white px-3 py-1 rounded-lg cursor-pointer hover:bg-orange-700 transition"
+                //   onClick={() => malzemeKaldir(malzeme)} // tıklanınca silme işi
+                // >
+                //   {malzeme}
+                // </span>
+
+                <div
+                  id="chip"
+                  class="relative rounded-md flex bg-[#ff904d] hover:bg-[#ff6c12] py-1 pl-2.5 pr-10 border border-transparent text-sm text-white transition-all shadow-sm"
                 >
                   {malzeme}
-                </span>
+                  <button
+                    class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5 hover:cursor-pointer"
+                    type="button"
+                    key={index}
+                    onClick={() => closeAlert(malzeme)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                    </svg>
+                  </button>
+                </div>
               ))}
             </div>
           </div>
