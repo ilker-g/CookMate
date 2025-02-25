@@ -1,6 +1,6 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquareXTwitter, faInstagram, faPinterest, faYoutube, faGooglePlay, faAppStoreIos } from '@fortawesome/free-brands-svg-icons'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faSquareXTwitter, faInstagram, faPinterest, faYoutube, faGooglePlay, faAppStoreIos } from '@fortawesome/free-brands-svg-icons'
 
 
 function Footer() {
@@ -37,12 +37,12 @@ function Footer() {
 
                 <div className='ml-28 text-[#ff914d]'>
                     <h2 className='text-2xl font-bold mb-4 whitespace-nowrap'>Takipte Kalın</h2>
-                    <ul>
+                    {/*                     <ul>
                         <li className='text-xl'><a href="" className='hover:text-orange-600'><FontAwesomeIcon icon={faInstagram} /> Instagram</a></li>
                         <li className='text-xl'><a href="" className='hover:text-black'><FontAwesomeIcon icon={faSquareXTwitter} /> Twitter</a></li>
                         <li className='text-xl'><a href="" className='hover:text-red-600'><FontAwesomeIcon icon={faPinterest} /> Pinterest</a></li>
                         <li className='text-xl '><a href="" className='hover:text-red-700'><FontAwesomeIcon icon={faYoutube} /> Youtube</a></li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
 
@@ -51,7 +51,7 @@ function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-2 pt-2 text-white ml-30">
 
                 <div className="border-t border-white bg-[#ff914d] p-3 flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left max-w-[250px] h-[100px] md:h-[100px]">
-                    <FontAwesomeIcon icon={faGooglePlay} className="w-12 h-12 md:text-6xl" />
+                    {/* <FontAwesomeIcon icon={faGooglePlay} className="w-12 h-12 md:text-6xl" /> */}
                     <div>
                         <h2 className="text-lg font-bold whitespace-nowrap">Hemen indir</h2>
                         <h2 className="text-2xl md:text-2xl font-bold whitespace-nowrap mt-1">Google Play</h2>
@@ -59,7 +59,7 @@ function Footer() {
                 </div>
 
                 <div className="border-t border-white bg-[#ff914d] p-3 flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left max-w-[250px] h-[100px] md:h-[100px]">
-                    <FontAwesomeIcon icon={faAppStoreIos} className="w-12 h-12 md:text-6xl" />
+                    {/* <FontAwesomeIcon icon={faAppStoreIos} className="w-12 h-12 md:text-6xl" /> */}
                     <div>
                         <h2 className="text-lg font-bold whitespace-nowrap">Hemen indir</h2>
                         <h2 className="text-2xl md:text-2xl font-bold whitespace-nowrap mt-1">App Store</h2>
