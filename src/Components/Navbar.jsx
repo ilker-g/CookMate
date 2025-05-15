@@ -45,7 +45,7 @@ function Navbar() {
                 window.location.hash = "#Meals";
               }}
             >
-              Türler
+              Yöreler
             </li>
           </ul>
 
