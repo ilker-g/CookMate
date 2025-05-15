@@ -5,11 +5,12 @@ import About from "./Components/About";
 import Howitworks from "./Components/Howitworks";
 import Slider from "./Components/Slider";
 import Meals from "./Components/Meals";
+import Footer from "./Components/Footer";
 
 function HomePage() {
   return (
     <div>
-      <div className="font-sans text-[#242423] overflow-x-hidden  max-w-screen mx-auto px-4">
+      <div className="font-sans text-[#242423] overflow-x-hidden max-w-screen ">
         <Navbar />
 
         <Hero />
@@ -21,6 +22,8 @@ function HomePage() {
         <Howitworks />
 
         <Meals />
+
+        <Footer />
       </div>
     </div>
   );
